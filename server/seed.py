@@ -15,9 +15,9 @@ with app.app_context():
     db.session.add_all([customer1, customer2, customer3])
     db.session.commit()
 
-    item1 = Item(name='Laptop Backpack', price=49.99)
-    item2 = Item(name='Insulated Coffee Mug', price=9.99)
-    item3 = Item(name='6 Foot HDMI Cable', price=12.99)
+    item1 = Item(title='Laptop Backpack', price=49.99)
+    item2 = Item(title='Insulated Coffee Mug', price=9.99)
+    item3 = Item(title='6 Foot HDMI Cable', price=12.99)
     db.session.add_all([item1, item2, item3])
     db.session.commit()
 

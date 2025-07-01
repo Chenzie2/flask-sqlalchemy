@@ -24,7 +24,7 @@ class TestSerialization:
     def test_item_is_serializable(self):
         '''item is serializable'''
         with app.app_context():
-            i = Item(name='Insulated Mug', price=9.99)
+            i = Item(title='Insulated Mug', price=9.99)
             db.session.add(i)
             db.session.commit()
             r = Review(comment='great!', item=i)
@@ -33,7 +33,7 @@ class TestSerialization:
 
             item_dict = i.to_dict()
             assert item_dict['id']
-            assert item_dict['name'] == 'Insulated Mug'
+            assert item_dict['title'] == 'Insulated Mug'
             assert item_dict['price'] == 9.99
             assert item_dict['reviews']
             assert 'item' not in item_dict['reviews']
